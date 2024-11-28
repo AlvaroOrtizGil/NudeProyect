@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo y Video</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Estilos para el video */
+        .video-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 2300px;
+            height: auto;
+        }
+
+        /* Estilos para el catálogo */
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .item img {
+            width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            max-width: 300px; /* Aumenta el tamaño máximo de la imagen */
+        }
+
+        .item .price {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Efecto hover en la camiseta 2 */
+        .item:nth-child(2):hover img {
+            content: url("https://nude-project.com/cdn/shop/files/IMG_1168.jpg?v=1732213592");
+            /* Cambia la imagen cuando pasas el ratón por encima */
+        }
+
+        /* Estilo para asegurar que todo se vea bien en dispositivos pequeños */
+        @media (max-width: 600px) {
+            .catalog {
+                grid-template-columns: 1fr;
+            }
+
+            /* Puedes ajustar aún más el tamaño de las imágenes en pantallas pequeñas */
+            .item img {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sección del video -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/760d6ceef99a49249a3bad01c0268b45.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Catálogo de ropa -->
+    <div class="catalog">
+        <div class="item">
+            <img class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                data-widths="[800,1000,1200]" data-sizes="auto" alt="SUDADERA CHERRY NEGRA ASH"
+                data-image-id="56253971333444"
+                data-srcset="//nude-project.com/cdn/shop/files/CHERRYHOODASHback_3a259e05-bd08-4aaf-b46d-9f868cde31be_back_800x.jpg?v=1716972379 800w, //nude-project.com/cdn/shop/files/CHERRYHOODASHback_3a259e05-bd08-4aaf-b46d-9f868cde31be_back_1000x.jpg?v=1716972379 1000w, //nude-project.com/cdn/shop/files/CHERRYHOODASHback_3a259e05-bd08-4aaf-b46d-9f868cde31be_back_1200x.jpg?v=1716972379 1200w"
+                sizes="166px"
+                srcset="//nude-project.com/cdn/shop/files/CHERRYHOODASHback_3a259e05-bd08-4aaf-b46d-9f868cde31be_back_800x.jpg?v=1716972379 800w, //nude-project.com/cdn/shop/files/CHERRYHOODASHback_3a259e05-bd08-4aaf-b46d-9f868cde31be_back_1000x.jpg?v=1716972379 1000w, //nude-project.com/cdn/shop/files/CHERRYHOODASHback_3a259e05-bd08-4aaf-b46d-9f868cde31be_back_1200x.jpg?v=1716972379 1200w" alt="Sudadera Cherry Negra Ash" />
+            <p class="price">$49.99</p>
+        </div>
+
+        <div class="item">
+            <img class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                data-widths="[800,1000,1200]" data-sizes="auto" alt="SUDADERA BOXY GRIS KORY"
+                data-image-id="58531258302788"
+                data-srcset="//nude-project.com/cdn/shop/files/KORY_HOOD_GRAY_fake_back_800x.jpg?v=1724255809 800w, //nude-project.com/cdn/shop/files/KORY_HOOD_GRAY_fake_back_1000x.jpg?v=1724255809 1000w, //nude-project.com/cdn/shop/files/KORY_HOOD_GRAY_fake_back_1200x.jpg?v=1724255809 1200w"
+                sizes="166px"
+                srcset="//nude-project.com/cdn/shop/files/KORY_HOOD_GRAY_fake_back_800x.jpg?v=1724255809 800w, //nude-project.com/cdn/shop/files/KORY_HOOD_GRAY_fake_back_1000x.jpg?v=1724255809 1000w, //nude-project.com/cdn/shop/files/KORY_HOOD_GRAY_fake_back_1200x.jpg?v=1724255809 1200w" alt="Sudadera Boxy Gris Kory" />
+            <p class="price">$59.99</p>
+        </div>
+
+        <div class="item">
+            <img class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                data-widths="[800,1000,1200]" data-sizes="auto" alt="SUDADERA BOXY MARSHMALLOW KORY"
+                data-image-id="58530760655172"
+                data-srcset="//nude-project.com/cdn/shop/files/KORY_HOOD_MARSHMALLOW_fake_back_78881543-7176-408b-b4e6-dddb7e1b52ae_800x.jpg?v=1724252459 800w, //nude-project.com/cdn/shop/files/KORY_HOOD_MARSHMALLOW_fake_back_78881543-7176-408b-b4e6-dddb7e1b52ae_1000x.jpg?v=1724252459 1000w, //nude-project.com/cdn/shop/files/KORY_HOOD_MARSHMALLOW_fake_back_78881543-7176-408b-b4e6-dddb7e1b52ae_1200x.jpg?v=1724252459 1200w"
+                sizes="177px"
+                srcset="//nude-project.com/cdn/shop/files/KORY_HOOD_MARSHMALLOW_fake_back_78881543-7176-408b-b4e6-dddb7e1b52ae_800x.jpg?v=1724252459 800w, //nude-project.com/cdn/shop/files/KORY_HOOD_MARSHMALLOW_fake_back_78881543-7176-408b-b4e6-dddb7e1b52ae_1000x.jpg?v=1724252459 1000w, //nude-project.com/cdn/shop/files/KORY_HOOD_MARSHMALLOW_fake_back_78881543-7176-408b-b4e6-dddb7e1b52ae_1200x.jpg?v=1724252459 1200w" alt="Sudadera Boxy Marshmallow Kory" />
+            <p class="price">$69.99</p>
+        </div>
+
+        <!-- Nuevas sudaderas añadidas -->
+        <div class="item">
+            <img class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                data-widths="[800,1000,1200]" data-sizes="auto" alt="SUDADERA ASH LA MONNAIE"
+                data-image-id="58842383450436"
+                data-srcset="//nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_800x.jpg?v=1725986939 800w, //nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_1000x.jpg?v=1725986939 1000w, //nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_1200x.jpg?v=1725986939 1200w"
+                sizes="166px"
+                srcset="//nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_800x.jpg?v=1725986939 800w, //nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_1000x.jpg?v=1725986939 1000w, //nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_1200x.jpg?v=1725986939 1200w" alt="Sudadera Ash La Monnaie" />
+            <p class="price">$79.99</p>
+        </div>
+
+        <div class="item">
+            <img class="ProductItem__Image Image--fadeIn lazyautosizes Image--lazyLoaded"
+                data-widths="[800,1000,1200]" data-sizes="auto" alt="SUDADERA ASH LA MONNAIE"
+                data-image-id="58842383450436"
+                data-srcset="//nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_800x.jpg?v=1725986939 800w, //nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_1000x.jpg?v=1725986939 1000w, //nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_1200x.jpg?v=1725986939 1200w"
+                sizes="166px"
+                srcset="//nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_800x.jpg?v=1725986939 800w, //nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_1000x.jpg?v=1725986939 1000w, //nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_1200x.jpg?v=1725986939 1200w" alt="Sudadera Ash La Monnaie" />
+            <p class="price">$79.99</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
