@@ -1,0 +1,41 @@
+/* Estilo general para el contenedor */
+.collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Estilo para cada item */
+  .collection-item {
+    width: 30%; /* Controla el tamaño de cada imagen */
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    /* Imagen dentro del item */
+    img {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #ccc;
+    }
+  
+    /* Título debajo de la imagen */
+    .collection-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      padding: 10px;
+    }
+  
+    /* Efecto al pasar el mouse */
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+  

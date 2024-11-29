@@ -1,7 +1,7 @@
-/* Variables para colores */ 
-$background-color:rgb(0, 0, 0)
-;
+/* Variables para colores */
+$background-color: rgb(0, 0, 0);
 $text-color: white;
+$hover-color: rgb(255, 153, 0); /* Color amarillo para hover */
 
 /* Estilo para el header */
 header {
@@ -10,15 +10,66 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 4vh; /* Hace que el header ocupe toda la pantalla */
-  margin: 0;
+  height: 4vh;
   padding: 10px 25px;
-  
+  position: relative;
+
+  .header-content {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Centra el contenido en el header */
+    align-items: center;
+  }
+
   h1 {
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
     margin: 0;
+    flex-grow: 1; /* Hace que el título ocupe el espacio disponible */
+    text-align: center; /* Asegura que el texto esté centrado */
   }
-  
+
+  .footer-link {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    position: absolute; /* Coloca el enlace fuera del flujo normal */
+    left: 25px; /* Lo alinea a la izquierda */
+    
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+.bar {
+  height: 4px;
+  background-color: $text-color;
+  border-radius: 2px;
+}
+
+/* Estilo para el footer */
+footer {
+  background-color: $background-color;
+  color: $text-color;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 25px;
+  margin-top: 0px;
+}
+
+.footer-link {
+  color: $text-color;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $hover-color;
+  }
 }
