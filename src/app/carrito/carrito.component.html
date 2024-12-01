@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .cart-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .cart-item span {
+            flex-grow: 1;
+        }
+
+        .cart-item .quantity {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .cart-item button {
+            padding: 5px 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-item button:hover {
+            background-color: #b02a37;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h2>Tu Carrito</h2>
+        <div id="cart-items">
+            <!-- Productos del carrito se mostrarán aquí -->
+        </div>
+    </div>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = document.getElementById('cart-items');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Tu carrito está vacío.</p>';
+                return;
+            }
+
+            cart.forEach(item => {
+                const itemHTML = `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <span>${item.name}</span>
+                        <span>Cantidad: ${item.quantity}</span>
+                        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                        <button onclick="removeFromCart('${item.name}')">Eliminar</button>
+                    </div>
+                `;
+                cartItems.innerHTML += itemHTML;
+            });
+        }
+
+        function removeFromCart(name) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const updatedCart = cart.filter(item => item.name !== name);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            location.reload(); // Recarga la página para actualizar
+        }
+
+        loadCart();
+    </script>
+</body>
+</html>

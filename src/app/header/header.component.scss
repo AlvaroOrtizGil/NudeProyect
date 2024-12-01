@@ -22,7 +22,7 @@ header {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Se especifica el tamaño del texto */
     font-weight: bold;
     text-transform: uppercase;
     margin: 0;
@@ -38,7 +38,7 @@ header {
     transition: color 0.3s ease;
     position: absolute; /* Coloca el enlace fuera del flujo normal */
     left: 25px; /* Lo alinea a la izquierda */
-    
+
     &:hover {
       color: $hover-color;
     }
@@ -59,15 +59,23 @@ footer {
   justify-content: flex-start;
   align-items: center;
   padding: 15px 25px;
-  margin-top: 0px;
+  margin-top: 0;
+
+  .footer-link {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
 }
 
-.footer-link {
+.cart-link {
   color: $text-color;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  transition: color 0.3s ease;
 
   &:hover {
     color: $hover-color;

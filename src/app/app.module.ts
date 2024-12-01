@@ -11,6 +11,7 @@ import { Sudadera1Component } from './sudadera1/sudadera1.component';
 import { Sudadera2Component } from './sudadera2/sudadera2.component';
 import { Sudadera3Component } from './sudadera3/sudadera3.component';
 import { Sudadera4Component } from './sudadera4/sudadera4.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Sudadera4Component } from './sudadera4/sudadera4.component';
     Sudadera1Component,
     Sudadera2Component,
     Sudadera3Component,
-    Sudadera4Component
+    Sudadera4Component,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
