@@ -1,27 +1,12 @@
-# NudeProyect
+Para esta clacion de de web Angular hemos usado como referencia la web de una marca de ropa llmada NudeProyect
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+La pagina original es muy extensa ya que tiene muchos productos por eso la he acortado bastante
 
-## Development server
+Tiene un componete Landing que saldra siempre al inicio cuando nos metamos en la pagina,aqui he usado ngif:
+Usamos *ngIf para manejar la visibilidaden la página de inicio, mostramos un botón de "Acceder" inicialmente. Una vez que el usuario hace clic en el botón, se cambia la variable de estado showContent de false a true, lo que permite mostrar el contenido principal.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+El uso de ngfor.
 
-## Code scaffolding
+usamos *ngFor para mostrar un catálogo de productos. Cada producto tiene propiedades como el título, la imagen, el precio, etc. *ngFor recorre el array catalogItems y genera un bloque de HTML para cada producto.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+En este código, por cada elemento en el array catalogItems, se genera un bloque HTML que representa una tarjeta de producto con su respectiva imagen, título y precio.
