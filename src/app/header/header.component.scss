@@ -8,27 +8,25 @@ header {
   background-color: $background-color;
   color: $text-color;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 4vh;
   padding: 10px 25px;
   position: relative;
-  width: 96.7%; /* Igual que el mensaje */
-  margin-top: 40px; /* Separa el header del mensaje de arriba */
-  top:29px;
-}
+  width: 96.7%;
+  top: 29px;
+
   #top-message {
-    background-color: $background-color; /* Fondo negro */
-    color: $text-color; /* Texto blanco */
-    font-size: 16px; /* Ajusta el tamaño de la fuente según lo desees */
+    background-color: $background-color;
+    color: $text-color;
+    font-size: 16px;
     padding: 10px 25px;
     text-align: center;
-    position: fixed; /* Lo mantiene fijo en la parte superior */
-    top: 0; /* Ubicación en la parte superior */
-    left: 50%; /* Lo centra horizontalmente */
-    transform: translateX(-50%); /* Ajusta el centrado */
-    width: 96.7%; /* Ajusta el ancho al 96.7% */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96.7%;
+    z-index: 1000;
   }
 
   .header-content {
@@ -36,7 +34,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0px;
+    padding: 10px 0;
 
     h1 {
       font-size: 1.5rem;
@@ -45,73 +43,24 @@ header {
       margin: 0;
       text-align: center;
       flex-grow: 1;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
     }
 
-    .cart-link {
+    .collections-link {
+      position: absolute;
+      left: 25px; /* Ajusta la distancia desde el borde izquierdo */
       font-size: 14px;
       color: $text-color;
       text-decoration: none;
-      margin-left: 20px;
-      transition: color 0.3s;
+      font-weight: bold;
 
       &:hover {
         color: $hover-color;
       }
     }
   }
-
-  .menu-container {
-    position: relative;
-
-    .menu-toggle {
-      background: none;
-      border: 1px solid $text-color;
-      color: $text-color;
-      padding: 5px 10px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background 0.3s;
-
-      &:hover {
-        background-color: $hover-color;
-        color: $background-color;
-      }
-    }
-
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: $background-color;
-      color: $text-color;
-      list-style: none;
-      padding: 10px 0;
-      margin: 0;
-      border: 1px solid $text-color;
-      width: 150px;
-
-      li {
-        padding: 5px 15px;
-
-        &:hover {
-          background-color: $hover-color;
-          color: $background-color;
-        }
-      }
-
-      a {
-        color: $text-color;
-        text-decoration: none;
-
-        &:hover {
-          color: $background-color;
-        }
-      }
-
-      &.show {
-        display: block;
-      }
-    }
-  }
-
+}

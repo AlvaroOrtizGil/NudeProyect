@@ -83,8 +83,8 @@ video {
   
 }
 
-.catalog-item button:hover {
-  background: #0056b3;
+.price{
+  color:black;
 }
 
 /* Responsivo */
@@ -105,23 +105,25 @@ video {
             </video>
         </div>
     
+      
+  <!-- Catálogo -->
+  <section class="catalog">
+    <h2>Catálogo</h2>
+    <div class="catalog-grid">
+      <!-- Uso de *ngFor para iterar sobre catalogItems -->
+      <div
+        class="catalog-item"
+        *ngFor="let item of catalogItems"
+        (mouseover)="item.imagen = item.hoverImagen" 
+        (mouseout)="item.imagen = item.imagenOriginal">
+      
+        <!-- Mostramos imagen, título, precio y un botón -->
+        <img [src]="item.imagen" [alt]="item.titulo" />
+        <h3>{{ item.titulo }}</h3>
+        <p class="price">{{ item.precio }}</p>
         
-        <section class="catalog">
-            <h2>Catálogo</h2>
-            <div class="catalog-grid">
-              <div
-                class="catalog-item"
-                *ngFor="let item of catalogItems"
-                (mouseover)="item.imagen = item.hoverImagen"
-                (mouseout)="item.imagen = item.imagenOriginal"
-              >
-                <img [src]="item.imagen" [alt]="item.titulo" />
-                <h3>{{ item.titulo }}</h3>
-                <p class="price">{{ item.precio }}</p>
-                <button routerLink="/details">Ver detalles</button>
-              </div>
-            </div>
-          </section>
-          
+      </div>
+</div>
+  </section>
     </body>
     </html>

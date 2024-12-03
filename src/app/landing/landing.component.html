@@ -1,0 +1,9 @@
+<div *ngIf="!showContent" class="landing-page">
+    <h1>Bienvenido a Mi Sitio Web</h1>
+    <button (click)="acceder()">Acceder</button>
+  </div>
+  
+  <div *ngIf="showContent">
+    <app-home></app-home> <!-- Incluye el componente principal aquí -->
+  </div>
+  

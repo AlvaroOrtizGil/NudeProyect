@@ -7,11 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CollectionsComponent } from './collections/collections.component';
-import { Sudadera1Component } from './sudadera1/sudadera1.component';
-import { Sudadera2Component } from './sudadera2/sudadera2.component';
-import { Sudadera3Component } from './sudadera3/sudadera3.component';
-import { Sudadera4Component } from './sudadera4/sudadera4.component';
-import { CarritoComponent } from './carrito/carrito.component';
+import { LandingComponent } from './landing/landing.component';
+
+
 
 @NgModule({
   declarations: [
@@ -20,11 +18,9 @@ import { CarritoComponent } from './carrito/carrito.component';
     FooterComponent,
     HomeComponent,
     CollectionsComponent,
-    Sudadera1Component,
-    Sudadera2Component,
-    Sudadera3Component,
-    Sudadera4Component,
-    CarritoComponent
+    LandingComponent
+   
+   
   ],
   imports: [
     BrowserModule,
