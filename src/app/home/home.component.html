@@ -5,86 +5,95 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Catálogo y Video</title>
         <style>
-            body {
-                margin: 0;
-                font-family: Arial, sans-serif;
-                background-color: #f9f9f9;
-                color: #333;
-            }
-    
-            /* Estilos para el video */
-            .video-container {
-                text-align: center;
-                margin: 20px;
-            }
-    
-            video {
-                width: 100%;
-                max-width: 2300px;
-                height: auto;
-            }
-    
-            /* Estilos para el catálogo */
-            .catalog {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-                padding: 20px;
-            }
-    
-            .item {
-                background-color: #fff;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                text-align: center;
-                position: relative;
-            }
-    
-            .item img {
-                width: 100%;
-                height: auto;
-                max-width: 300px;
-            }
-    
-            .item .price {
-                margin-top: 10px;
-                font-size: 1.2rem;
-                font-weight: bold;
-                color: #333;
-            }
-    
-            /* Efecto hover en la sudadera 1 */
-            .item:nth-child(1):hover img {
-                content: url("https://nude-project.com/cdn/shop/files/IMG_1508_model_315x.png?v=1716970946");
-            }
-    
-            /* Efecto hover en la sudadera 2 */
-            .item:nth-child(2):hover img {
-                content: url("https://nude-project.com/cdn/shop/files/IMG_1168.jpg?v=1732213592");
-            }
-    
-            /* Efecto hover en la sudadera 3 */
-            .item:nth-child(3):hover img {
-                content: url("https://nude-project.com/cdn/shop/files/KORY_HOOD_MARSHMALLOW_fake_front_220d21ee-8f29-49a3-a028-1c5f82edecd1_315x.jpg?v=1724315513");
-            }
-    
-            /* Efecto hover en la sudadera 4 */
-            .item:nth-child(4):hover img {
-                content: url("https://nude-project.com/cdn/shop/files/IMG_1990.jpg?v=1727467144");
-            }
-    
-            /* Estilo para dispositivos pequeños */
-            @media (max-width: 600px) {
-                .catalog {
-                    grid-template-columns: 1fr;
-                }
-    
-                .item img {
-                    max-width: 400px;
-                }
-            }
+        body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.video-container {
+  text-align: center;
+  margin: 20px;
+}
+
+video {
+  width: 100%;
+  max-width: 2300px;
+  height: auto;
+}
+
+.catalog {
+  padding: 20px;
+  text-align: center;
+}
+
+.catalog h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.catalog-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.2s ease;
+}
+
+.catalog-item:hover {
+  transform: scale(1.05);
+}
+
+.catalog-item img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  border-radius: 4px;
+}
+
+.catalog-item h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.catalog-item .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+.catalog-item button {
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.catalog-item button:hover {
+  background: #0056b3;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
         </style>
     </head>
     <body>
@@ -97,33 +106,22 @@
         </div>
     
         
-        <div class="catalog">
-          <div class="item">
-              <a href="/sudadera1">
-                  <img src="https://nude-project.com/cdn/shop/files/CHERRYHOODASHback_3a259e05-bd08-4aaf-b46d-9f868cde31be_back_800x.jpg?v=1716972379" alt="Sudadera Cherry Negra Ash" />
-              </a>
-              <p class="price">$49.99</p>
-          </div>
-          <!-- El resto de las sudaderas seguirían igual -->
-  
-      
-    
-            <div class="item">
-                <img src="https://nude-project.com/cdn/shop/files/KORY_HOOD_GRAY_fake_back_800x.jpg?v=1724255809" alt="Sudadera Boxy Gris Kory" />
-                <p class="price">$59.99</p>
+        <section class="catalog">
+            <h2>Catálogo</h2>
+            <div class="catalog-grid">
+              <div
+                class="catalog-item"
+                *ngFor="let item of catalogItems"
+                (mouseover)="item.imagen = item.hoverImagen"
+                (mouseout)="item.imagen = item.imagenOriginal"
+              >
+                <img [src]="item.imagen" [alt]="item.titulo" />
+                <h3>{{ item.titulo }}</h3>
+                <p class="price">{{ item.precio }}</p>
+                <button routerLink="/details">Ver detalles</button>
+              </div>
             </div>
-    
-            <div class="item">
-                <img src="https://nude-project.com/cdn/shop/files/KORY_HOOD_MARSHMALLOW_fake_back_78881543-7176-408b-b4e6-dddb7e1b52ae_800x.jpg?v=1724252459" alt="Sudadera Boxy Marshmallow Kory" />
-                <p class="price">$69.99</p>
-            </div>
-    
-            <div class="item">
-                <img src="https://nude-project.com/cdn/shop/files/LA_MONNAIE_HOOD_ASH_back_800x.jpg?v=1725986939" alt="Sudadera Ash La Monnaie" />
-                <p class="price">$79.99</p>
-            </div>
-
-
-        </div>
+          </section>
+          
     </body>
     </html>
