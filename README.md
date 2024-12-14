@@ -14,3 +14,14 @@ En este código, por cada elemento en el array catalogItems, se genera un bloque
 Crear el Json con la informaciin de los productos
 Creacion de un Servicio en Angular
 Generamos un servicio usando Angular CLI (ng generate service services/productos) para cargar los datos del JSON mediante HTTP.
+
+
+Para cargar este JSON desde la carpeta assets, utilizamos el servicio HttpClient. Aquí está el servicio productos.service.ts:
+home.component.ts, inyectamos el servicio y usamos sus datos:
+
+el servicio ProductosService está diseñado para obtener los datos de productos desde un archivo JSON externo. Aquí está el flujo básico de cómo funciona este servicio
+
+Servicio (productos.service.ts):
+
+Este servicio tiene un método (obtenerProductos) que usa el HttpClient de Angular para hacer una solicitud HTTP que obtiene los productos desde un archivo JSON.
+El servicio se encarga de la lógica de la solicitud HTTP, que es un proceso asíncrono.
