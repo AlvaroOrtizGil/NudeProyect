@@ -10,3 +10,7 @@ El uso de ngfor.
 usamos *ngFor para mostrar un catálogo de productos. Cada producto tiene propiedades como el título, la imagen, el precio, etc. *ngFor recorre el array catalogItems y genera un bloque de HTML para cada producto.
 
 En este código, por cada elemento en el array catalogItems, se genera un bloque HTML que representa una tarjeta de producto con su respectiva imagen, título y precio.
+
+Crear el Json con la informaciin de los productos
+Creacion de un Servicio en Angular
+Generamos un servicio usando Angular CLI (ng generate service services/productos) para cargar los datos del JSON mediante HTTP.
