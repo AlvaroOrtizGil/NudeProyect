@@ -114,16 +114,14 @@ video {
       <div
         class="catalog-item"
         *ngFor="let item of catalogItems"
-        (mouseover)="item.imagen = item.hoverImagen" 
-        (mouseout)="item.imagen = item.imagenOriginal">
-      
-        <!-- Mostramos imagen, título, precio y un botón -->
+        (mouseover)="item.imagen = item.hoverImagen"
+        (mouseout)="item.imagen = item.imagenOriginal"
+      >
         <img [src]="item.imagen" [alt]="item.titulo" />
         <h3>{{ item.titulo }}</h3>
         <p class="price">{{ item.precio }}</p>
-        
       </div>
-</div>
+    </div>
   </section>
     </body>
     </html>
